@@ -1,0 +1,12 @@
+<h1>Listing All Tweets</h1>
+
+<p>Recent Tweets:</p>
+<% @tweets.recent.each do |x| %>
+	<p>
+	<%= link_to x.user.login, user_path(x.user.id) %>, <%= x.location %>:
+	"<%= x.status %>"
+	<%= link_to "Delete", x, method: :delete, confirm: "Are you sure?" %>
+	</p>
+<% end %>	
+
+<%= link_to "Compose New Tweet", new_tweet_path %>

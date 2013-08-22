@@ -6,7 +6,11 @@
 
 <p>Tweets:</p>
 <% @user.tweets.each do |x| %>
-	<p>Status: <%= x.status %></p>
+	<p>
+		Status: <%= x.status %>
+		| <%= x.created_at.strftime("%b %d @ %l:%M %p") %>
+		<%= link_to "x", x, method: :delete, confirm: "You sure?" %>
+	</p>
 <% end %>	
 
 
