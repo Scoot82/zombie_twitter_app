@@ -1,4 +1,4 @@
-<h1>Listing All Tweets</h1>
+<h1>Most Recent Tweets</h1>
 
 <p>Recent Tweets:</p>
 <% @tweets.recent.each do |x| %>
@@ -9,4 +9,5 @@
 	</p>
 <% end %>	
 
-<%= link_to "Compose New Tweet", new_tweet_path %>
+<p><%= link_to "Compose New Tweet", new_tweet_path %></p>
+<%= link_to "Create New User", new_user_path %>

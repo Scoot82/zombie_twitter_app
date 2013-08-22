@@ -1,5 +1,7 @@
 <h1>Listing Users</h1>
 
 <% @user.each do |user| %>
+	<p>
 	<%= link_to user.login, user %>
+	</p>
 <% end %>	
