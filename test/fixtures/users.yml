@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  login: MyString
+  password: MyString
+  password_digest: MyString
+  email: MyString
+  location: MyString
+  death: 2013-08-22
+
+two:
+  login: MyString
+  password: MyString
+  password_digest: MyString
+  email: MyString
+  location: MyString
+  death: 2013-08-22
