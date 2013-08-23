@@ -5,9 +5,5 @@
 	<p>
 	<%= link_to x.user.login, user_path(x.user.id) %>, <%= x.location %>:
 	"<%= x.status %>"
-	<%= link_to "Delete", x, method: :delete, confirm: "Are you sure?" %>
 	</p>
 <% end %>	
-
-<p><%= link_to "Compose New Tweet", new_tweet_path %></p>
-<%= link_to "Create New User", new_user_path %>

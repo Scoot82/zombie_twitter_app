@@ -4,17 +4,21 @@
 <p>Hometown: <%= @user.location %></p>
 <p>Died: <%= @user.death %></p>
 
+<% if @current_user.id == @user.id %>
+	<%= link_to "Edit", edit_user_path %>
+	<%= link_to "Delete", user_path(@user.id), method: 'delete', confirm: "Are you sure?" %>
+<% end %>
+
 <h3>Tweets:</h3>
 <% @user.tweets.order('created_at DESC').each do |x| %>
 	<p>
 		Status: <%= x.status %>
 		| <%= x.created_at.strftime("%b %d @ %l:%M %p") %>
 		| <%= x.location %>
-		<%= link_to "x", x, method: :delete, confirm: "You sure?" %>
+		<% if @current_user.id == @user.id %>
+			<%= link_to "x", x, method: :delete, confirm: "You sure?" %>
+		<% end %>	
 	</p>
 <% end %>	
 
 
-<%= link_to "Edit", edit_user_path %>
-<%= link_to "Delete", user_path(@user.id), method: 'delete', confirm: "Are you sure?" %>
-<%= link_to "Home", tweets_path %>
