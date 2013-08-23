@@ -5,5 +5,7 @@
 	<p>
 	<%= link_to x.user.login, user_path(x.user.id) %>, <%= x.location %>:
 	"<%= x.status %>"
+	| <%= x.created_at.strftime("%b %d @ %l:%M %p") %>
+	| <%= image_tag x.image_url(:thumb).to_s %>
 	</p>
 <% end %>	

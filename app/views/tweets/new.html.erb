@@ -1,6 +1,6 @@
 <h1>Compose a new tweet</h1>
 
-<%= form_for @tweet do |f| %>
+<%= form_for @tweet, html: { multipart: true } do |f| %>
 	<p>
 	<%= f.label :status %>
 	<%= f.text_field :status %>
@@ -8,6 +8,9 @@
 	<p>
 	<%= f.label :location %>
 	<%= f.text_field :location %>
+	</p>
+	<p>
+	<%= f.file_field :image %>
 	</p>
 	<p>
 	<%= f.hidden_field :user_id, value: @current_user.id %>
