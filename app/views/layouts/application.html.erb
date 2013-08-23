@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+<% if @current_user %>
+	<%= "You are logged in as: #{@current_user.login}" %>
+	<%= link_to "Logout", '/sessions/:id', method: :delete %>
+<% else %>
+	<%= link_to "Login", new_session_path %>
+<% end %>	
+
+<% if flash[:notice].present? %>
+	<p style="color: blue; background: yellow; padding: 6px"><%= flash[:notice] %></p>
+<% end %>
 
 <%= yield %>
 
