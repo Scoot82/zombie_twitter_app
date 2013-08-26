@@ -7,7 +7,13 @@ gem 'carrierwave'
 gem 'rmagick'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
