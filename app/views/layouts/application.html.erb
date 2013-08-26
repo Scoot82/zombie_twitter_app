@@ -10,6 +10,7 @@
 	
 <% if @current_user %>
 	<%= "You are logged in as: #{@current_user.login}" %>
+	<%= link_to "My Account", user_path(@current_user.id) %>
 	<%= link_to "Compose New Tweet", new_tweet_path %>
 	<%= link_to "Logout", '/sessions/:id', method: :delete %>
 <% else %>

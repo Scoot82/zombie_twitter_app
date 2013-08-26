@@ -1,5 +1,6 @@
 <h1>User profile: <%= @user.login %></h1>
 
+<%= image_tag @user.image_url(:thumb).to_s %>
 <p>Email: <%= @user.email %></p>
 <p>Hometown: <%= @user.location %></p>
 <p>Died: <%= @user.death %></p>
